@@ -8,22 +8,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService", "AuthService\AuthService.csproj", "{F34BE618-836B-40FD-A07A-8391BE245904}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIGateway", "APIGateway\APIGateway.csproj", "{18E49A13-B1B8-411A-AFEE-744FF0F24392}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicationService", "MedicationService\MedicationService.csproj", "{04083518-A139-4541-BEE9-0ECC490D4DCA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService", "OrderService\OrderService.csproj", "{6B382868-3A0E-4AA4-9DDC-5358134F79EE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentService", "PaymentService\PaymentService.csproj", "{006F7912-4AEC-45A8-86CC-0C9B8CB34982}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecommendationService", "RecommendationService\RecommendationService.csproj", "{9B1FA4FB-E40F-47B2-B4CD-546B36E428A2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdherenceService", "AdherenceService\AdherenceService.csproj", "{F53E5225-2476-4583-8F98-5CD109C23730}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedModels", "SharedModels\SharedModels.csproj", "{13283A0C-23DA-458D-90E1-02574B3B3243}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediGuard", "MediGuard\MediGuard.csproj", "{F16B32B4-AD01-4626-9BD3-BB0E8361C45A}"
 EndProject
 Global
@@ -32,38 +16,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F34BE618-836B-40FD-A07A-8391BE245904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F34BE618-836B-40FD-A07A-8391BE245904}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F34BE618-836B-40FD-A07A-8391BE245904}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F34BE618-836B-40FD-A07A-8391BE245904}.Release|Any CPU.Build.0 = Release|Any CPU
-		{18E49A13-B1B8-411A-AFEE-744FF0F24392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18E49A13-B1B8-411A-AFEE-744FF0F24392}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18E49A13-B1B8-411A-AFEE-744FF0F24392}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18E49A13-B1B8-411A-AFEE-744FF0F24392}.Release|Any CPU.Build.0 = Release|Any CPU
-		{04083518-A139-4541-BEE9-0ECC490D4DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04083518-A139-4541-BEE9-0ECC490D4DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04083518-A139-4541-BEE9-0ECC490D4DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04083518-A139-4541-BEE9-0ECC490D4DCA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6B382868-3A0E-4AA4-9DDC-5358134F79EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6B382868-3A0E-4AA4-9DDC-5358134F79EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6B382868-3A0E-4AA4-9DDC-5358134F79EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6B382868-3A0E-4AA4-9DDC-5358134F79EE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{006F7912-4AEC-45A8-86CC-0C9B8CB34982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{006F7912-4AEC-45A8-86CC-0C9B8CB34982}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{006F7912-4AEC-45A8-86CC-0C9B8CB34982}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{006F7912-4AEC-45A8-86CC-0C9B8CB34982}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B1FA4FB-E40F-47B2-B4CD-546B36E428A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B1FA4FB-E40F-47B2-B4CD-546B36E428A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B1FA4FB-E40F-47B2-B4CD-546B36E428A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B1FA4FB-E40F-47B2-B4CD-546B36E428A2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F53E5225-2476-4583-8F98-5CD109C23730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F53E5225-2476-4583-8F98-5CD109C23730}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F53E5225-2476-4583-8F98-5CD109C23730}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F53E5225-2476-4583-8F98-5CD109C23730}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13283A0C-23DA-458D-90E1-02574B3B3243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13283A0C-23DA-458D-90E1-02574B3B3243}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13283A0C-23DA-458D-90E1-02574B3B3243}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13283A0C-23DA-458D-90E1-02574B3B3243}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F16B32B4-AD01-4626-9BD3-BB0E8361C45A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F16B32B4-AD01-4626-9BD3-BB0E8361C45A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F16B32B4-AD01-4626-9BD3-BB0E8361C45A}.Release|Any CPU.ActiveCfg = Release|Any CPU

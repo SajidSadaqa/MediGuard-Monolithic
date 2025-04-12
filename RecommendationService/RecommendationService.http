@@ -1,7 +1,0 @@
-@RecommendationService_HostAddress = http://localhost:5211
-
-### Get Recommendations for a Specific User
-GET {{RecommendationService_HostAddress}}/recommendation/user/user123
-Accept: application/json
-
-###
