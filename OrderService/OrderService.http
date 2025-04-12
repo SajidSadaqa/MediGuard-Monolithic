@@ -1,0 +1,43 @@
+@OrderService_HostAddress = http://localhost:5039
+
+### Create a New Order
+POST {{OrderService_HostAddress}}/order/
+Content-Type: application/json
+
+{
+  "userId": "user123",
+  "shippingAddress": "123 Main St, Springfield, USA",
+  "items": [
+    {
+      "medicationId": "med123",
+      "medicationName": "Aspirin",
+      "quantity": 2,
+      "price": 9.99
+    },
+    {
+      "medicationId": "med456",
+      "medicationName": "Ibuprofen",
+      "quantity": 1,
+      "price": 14.99
+    }
+  ]
+}
+
+### 
+# Save the returned OrderId for subsequent requests.
+# For example, if the response returns:
+# { "orderId": "d290f1ee-6c54-4b01-90e6-d701748f0851", ... }
+# then assign that value to the variable "orderId".
+@orderId = <replace_with_returned_orderId>
+
+### Get Order Details by OrderId
+GET {{OrderService_HostAddress}}/order/{{orderId}}
+Accept: application/json
+
+###
+
+### Get Orders for a Specific User
+GET {{OrderService_HostAddress}}/order/user/user123
+Accept: application/json
+
+###

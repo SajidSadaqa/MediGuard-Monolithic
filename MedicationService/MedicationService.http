@@ -1,0 +1,21 @@
+@MedicationService_HostAddress = http://localhost:5272
+
+### Test: Retrieve a single medication by id
+GET {{MedicationService_HostAddress}}/medication/12345
+Accept: application/json
+
+###
+
+### Test: Check medication conflicts
+# Pass a comma-separated list of medication identifiers (or names) in the 'meds' query parameter.
+GET {{MedicationService_HostAddress}}/medication/conflicts?meds=med1,med2,med3
+Accept: application/json
+
+###
+
+### Test: Get alternative medications for a given drug id
+# Replace "abc" with a valid drugId.
+GET {{MedicationService_HostAddress}}/medication/alternatives?drugId=abc
+Accept: application/json
+
+###

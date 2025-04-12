@@ -1,0 +1,6 @@
+@MediGuard_HostAddress = http://localhost:5290
+
+GET {{MediGuard_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

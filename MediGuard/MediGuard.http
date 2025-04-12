@@ -1,0 +1,213 @@
+### Authentication - Register a new user
+POST {{baseUrl}}/api/Auth/register
+Content-Type: application/json
+
+{
+  "Email": "test@mediaguard.com",
+  "Password": "Test@123",
+  "ConfirmPassword": "Test@123",
+  "FirstName": "Test",
+  "LastName": "User"
+}
+
+### Authentication - Login (retrieve JWT token)
+POST {{baseUrl}}/api/Auth/login
+Content-Type: application/json
+
+{
+  "Email": "test@mediaguard.com",
+  "Password": "Test@123"
+}
+
+### Authentication - Get user profile
+GET {{baseUrl}}/api/Auth/profile
+Authorization: Bearer {{token}}
+
+### Authentication - Update user profile
+PUT {{baseUrl}}/api/Auth/profile
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "FirstName": "Updated",
+  "LastName": "User",
+  "PhoneNumber": "1234567890"
+}
+
+### Medications - Get all medications
+GET {{baseUrl}}/api/Medication
+
+### Medications - Get medication by ID
+GET {{baseUrl}}/api/Medication/1
+
+### Medications - Create new medication (Admin only)
+POST {{baseUrl}}/api/Medication
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "Name": "Paracetamol",
+  "ScientificName": "Acetaminophen",
+  "Price": 10.99,
+  "IsAvailable": true,
+  "ConflictsWith": "[\"Ibuprofen\"]",
+  "Description": "Pain reliever"
+}
+
+### Medications - Update medication (Admin only)
+PUT {{baseUrl}}/api/Medication/1
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "Name": "Paracetamol Updated",
+  "ScientificName": "Acetaminophen Updated",
+  "Price": 9.99,
+  "IsAvailable": true,
+  "ConflictsWith": "[\"Ibuprofen\"]",
+  "Description": "Updated description"
+}
+
+### Medications - Delete medication (Admin only)
+DELETE {{baseUrl}}/api/Medication/1
+Authorization: Bearer {{adminToken}}
+
+### Medications - Search medications
+GET {{baseUrl}}/api/Medication/search?query=aspirin
+
+### User Medications - Get user's medications
+GET {{baseUrl}}/api/UserMedication
+Authorization: Bearer {{token}}
+
+### User Medications - Get a specific user medication
+GET {{baseUrl}}/api/UserMedication/1
+Authorization: Bearer {{token}}
+
+### User Medications - Add a medication to user's list
+POST {{baseUrl}}/api/UserMedication
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "MedicationId": 2,
+  "DosageInstructions": "Take one pill every 8 hours",
+  "Frequency": "Daily",
+  "Notes": "For headache relief"
+}
+
+### User Medications - Update user medication
+PUT {{baseUrl}}/api/UserMedication/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "DosageInstructions": "Updated dosage instructions",
+  "Frequency": "Twice daily",
+  "Notes": "Updated notes"
+}
+
+### User Medications - Delete user medication
+DELETE {{baseUrl}}/api/UserMedication/1
+Authorization: Bearer {{token}}
+
+### User Medications - Toggle medication active status
+PUT {{baseUrl}}/api/UserMedication/1/toggle-status
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+true
+
+### User Medications - Check user medication conflicts
+GET {{baseUrl}}/api/UserMedication/conflicts
+Authorization: Bearer {{token}}
+
+### User Medications - Check conflicts for a specific medication
+GET {{baseUrl}}/api/UserMedication/medication/2/conflicts
+Authorization: Bearer {{token}}
+
+### Orders - Get user's orders
+GET {{baseUrl}}/api/Order
+Authorization: Bearer {{token}}
+
+### Orders - Get order by ID
+GET {{baseUrl}}/api/Order/1
+Authorization: Bearer {{token}}
+
+### Orders - Create new order
+POST {{baseUrl}}/api/Order
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "ShippingAddress": "123 Main St, City, Country",
+  "PaymentMethod": "Credit Card",
+  "OrderItems": [
+    {
+      "MedicationId": 2,
+      "Quantity": 2
+    },
+    {
+      "MedicationId": 3,
+      "Quantity": 1
+    }
+  ]
+}
+
+### Orders - Update order status (Admin only)
+PUT {{baseUrl}}/api/Order/1/status
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+"Shipped"
+
+### Orders - Cancel order
+POST {{baseUrl}}/api/Order/1/cancel
+Authorization: Bearer {{token}}
+
+### ChatBot - Send chat message
+POST {{baseUrl}}/api/ChatBot
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "Message": "Hello, how can you help me with my medications?"
+}
+
+### ChatBot - Get chat history
+GET {{baseUrl}}/api/ChatBot/history
+Authorization: Bearer {{token}}
+
+### Recommendations - Get user recommendations
+GET {{baseUrl}}/api/Recommendation
+Authorization: Bearer {{token}}
+
+### Recommendations - Get recommendation by ID
+GET {{baseUrl}}/api/Recommendation/1
+Authorization: Bearer {{token}}
+
+### Recommendations - Generate new recommendations
+POST {{baseUrl}}/api/Recommendation/generate
+Authorization: Bearer {{token}}
+
+### Recommendations - Mark recommendation as viewed
+PUT {{baseUrl}}/api/Recommendation/1/view
+Authorization: Bearer {{token}}
+
+### Recommendations - Accept recommendation
+PUT {{baseUrl}}/api/Recommendation/1/accept
+Authorization: Bearer {{token}}
+
+### Recommendations - Delete recommendation
+DELETE {{baseUrl}}/api/Recommendation/1
+Authorization: Bearer {{token}}
+
+### Pill Recognition - Recognize pill from image
+POST {{baseUrl}}/api/PillRecognition/recognize
+Content-Type: multipart/form-data
+Authorization: Bearer {{token}}
+--boundary
+Content-Disposition: form-data; name="file"; filename="pill.jpg"
+Content-Type: image/jpeg
+
+< ./path/to/your/pill.jpg
+--boundary--

@@ -1,0 +1,23 @@
+@AdherenceService_HostAddress = http://localhost:5105
+
+### Retrieve adherence records for a specific user
+GET {{AdherenceService_HostAddress}}/adherence/user/user123
+Accept: application/json
+
+###
+
+### Trigger an adherence alert for a specific record
+POST {{AdherenceService_HostAddress}}/adherence/alert
+Content-Type: application/json
+
+{
+  "userId": "user123",
+  "medicationId": "med456",
+  "scheduledDoseTime": "2025-03-08T08:00:00Z",
+  "actualDoseTime": null,
+  "isDoseTaken": false,
+  "alertTriggered": false,
+  "note": "Dose missed, please check."
+}
+
+###
